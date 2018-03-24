@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Recorrido</title>
+</head>
+<body>
+
+<h1> Ingrese los datos</h1>
+
+<div class="container">
+
+	<form action="#" th:action="@{/resultado}" th:object="${recorrido}" method="POST">
+	
+			<p>Nombre: <input  type="text" th:field="*{nombre}"/></p>
+			<p>Distancia: <input class="form-control" type="number" th:field="*{recorrido}"/></p>
+			
+			<SELECT NAME="selCombo" SIZE=1  th:field="*{marca}"> 
+				<OPTION class="form-control"  th:value="Toyota" >Toyota</OPTION>
+				<OPTION class="form-control"  th:value="Nissan" >Nissan</OPTION>
+				<OPTION class="form-control" th:value="Kia"  >Kia</OPTION>
+			</SELECT> 
+			
+			<p>
+				<input class="btn btn-success"type="submit" value="Calcular"/>
+				<input class="btn btn-danger" type="reset" value="Cancelar"/>
+			</p>
+	</form>
+
+</div>
+
+</body>
+</html>
